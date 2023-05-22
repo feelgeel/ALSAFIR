@@ -1,11 +1,12 @@
 
 .card{
     // background-color: orangered;
-    width:35rem;
-    height: 52rem;
+    width:10rem;
+    height: 15rem;
     // transition: all .8s;
     perspective: 150rem;
     position: relative;
+    margin: 0rem .5rem;
     &-side{
         position: absolute;
         // background-color: orangered;
@@ -28,21 +29,13 @@
             transform: rotateY(180deg);
         }
     }
-    &:hover &-side-front{
-        transform: rotateY(-180deg);
-        
-    }
-    &:hover &-side-back{
-        transform: rotateY(0);
-        
-    }
 
     &-pic{
         background-size: cover;
-        height: 23rem;
+        height: 10rem;
         background-blend-mode: screen;
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        // -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        // clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         // border-top-left-radius: 3px;
         // border-top-right-radius: 3px;
         &-1{
@@ -57,9 +50,9 @@
         text-align: right;
         color: $color-white;
         position: absolute;
-        top: 12rem;
-        right: 2rem;
-        width: 64%; 
+        top: 5rem;
+        right: 5rem;
+        width: 50%; 
         &-span{
             padding: 13px;
             -webkit-box-decoration-break: clone;
@@ -72,7 +65,7 @@
         }
     }
     &-details{
-        padding: 3rem;
+        // padding: 3rem;
         ul{
             list-style: none;
             width: 80%;
