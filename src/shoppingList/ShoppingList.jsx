@@ -1,6 +1,7 @@
 import React from "react";
 import prodImg from "../img/hero-small.jpg"
-
+import { Link } from 'react-router-dom';
+import Popups from "../popups/Popups";
 const RightSide = () => {
   let totalPrice=0
     let products=[
@@ -18,15 +19,18 @@ const RightSide = () => {
     },
   ]
   return (
-    <div className="rightside">
+    <div className="shoppingList">
       <table style={{width:"100%"}}>
-        <button>ADD</button>
+      <a href="#popup">add</a>
+        <button>RESET</button>
         <tr>
           <th>product image</th>
           <th>product name</th>
           <th>quantity</th>
           <th>price per quant</th>
           <th>product price</th>
+          <th></th>
+          <th></th>
         </tr>
         {
           products.map(dt=>{
@@ -38,6 +42,8 @@ const RightSide = () => {
           <td>{dt.prodQuant}</td>
           <td>{dt.prodPricePerUnit}</td>
           <td>{dt.prodPricePerUnit*dt.prodQuant}</td>
+          <td><button>Update</button></td>
+          <td><button>Delete</button></td>
         </tr>
           }
           )
@@ -47,6 +53,7 @@ const RightSide = () => {
         <span>TOTAL PRICE {totalPrice} DA</span>
         <button>sold</button>
       </div>
+      <Popups/>
     </div>
   );
 };
