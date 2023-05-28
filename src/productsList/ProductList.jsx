@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Card from '../component/card/Card';
 import Popups from '../popups/Popups';
-
+import { useSelector, useDispatch } from "react-redux"; 
+import *as productsActions from '../redux/reduxSlice/productSlice';
 const ProductList = () => {
+    const dispatch=useDispatch();
     let prodDb=[
         {
             id: 1,
@@ -31,12 +33,16 @@ const ProductList = () => {
             price:30,
         },
     ]
+    dispatch(productsActions.addProducts(prodDb));
+     const re_products=useSelector(state=>state.entities.products.list);
+    //  const [products,setproducts]=useState(re_products)
+  console.log("prod",re_products);
     return (
         <div className="productlist">
             
             {
-                prodDb.map(item => { 
-                    return <Card data={item} />
+                re_products.map(item => { 
+                    return <Card key={item.id} data={item} />
                 })
             }
             

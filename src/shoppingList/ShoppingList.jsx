@@ -1,6 +1,5 @@
 import React from "react";
 import prodImg from "../img/hero-small.jpg"
-import { Link } from 'react-router-dom';
 import Popups from "../popups/Popups";
 const RightSide = () => {
   let totalPrice=0
