@@ -27,11 +27,17 @@ function App() {
   ]);
   return (
     <Provider store={theStore}>
-      <div
-        style={{ display: "flex", width: "100vw", height: "100vh" }}
-        className="App"
-      >
-        <RouterProvider router={router} />
+      <div className="global">
+        <div className="nav">
+          <button className="sales">sales</button>
+          <button className="db_manager">db manager</button>
+        </div>
+        <div
+          style={{ display: "flex", width: "100vw", height: "100vh" }}
+          className="App"
+        >
+          <RouterProvider router={router} />
+        </div>
       </div>
     </Provider>
   );
