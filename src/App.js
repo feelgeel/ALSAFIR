@@ -7,6 +7,10 @@ import AddProducts from "./addProducts/AddProducts";
 import { Provider } from "react-redux";
 import configureStore from "./redux/configureStre";
 import { useSelector, useDispatch } from "react-redux";
+import AddToDb from "./manageDb/AddToDb";
+import ManageDb from "./manageDb/ManageDb";
+import UpdateDb from "./manageDb/UpdateDb";
+import DeleteDB from "./manageDb/DeleteDB";
 const theStore = configureStore();
 function App() {
   // const addgting=useSelector(state=>state)
@@ -20,6 +24,22 @@ function App() {
       path: "/",
       element: <ShoppingList />,
     },
+    // {
+    //   path: "/manageDb",
+    //   element: <ManageDb/>,
+    // },
+    {
+      path: "/manageDb/add",
+      element: <AddToDb/>,
+    },
+    {
+      path: "/manageDb/update",
+      element: <UpdateDb/>,
+    },
+    {
+      path: "/manageDb/delete",
+      element: <DeleteDB/>,
+    },
     {
       path: "/prodList",
       element: <Popups />,
@@ -29,8 +49,8 @@ function App() {
     <Provider store={theStore}>
       <div className="global">
         <div className="nav">
-          <button className="sales">sales</button>
-          <button className="db_manager">db manager</button>
+          <button  className="sales"><a href="/">sales</a></button>
+          <button className="db_manager"><a href="/manageDb/add">db manager</a></button>
         </div>
         <div
           style={{ display: "flex", width: "100vw", height: "100vh" }}
