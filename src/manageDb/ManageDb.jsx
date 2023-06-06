@@ -9,14 +9,12 @@ export default function ManageDb() {
     {
     prodImg,
     prodName:"mounice",
-    prodQuant:1,
-    prodPricePerUnit:30,
+    price:30,
   },
     {
       prodImg,
       prodName:"zitoun",
-      prodQuant:1,
-      prodPricePerUnit:30,
+      price:30,
   },
 ]
   return (
@@ -26,23 +24,18 @@ export default function ManageDb() {
       <a href="#popup">add</a>
         <button>RESET</button>
         <tr>
-          <th>product image</th>
-          <th>product name</th>
-          <th>quantity</th>
-          <th>price per quant</th>
-          <th>product price</th>
+          <th> image</th>
+          <th> name</th>
+          <th>price</th>
           <th></th>
           <th></th>
         </tr>
         {
           products.map(dt=>{
-            
             return <tr>
           <td><img width="100px" height="50px" src={dt.prodImg}/></td>
           <td>{dt.prodName}</td>
-          <td>{dt.prodQuant}</td>
-          <td>{dt.prodPricePerUnit}</td>
-          <td>{dt.prodPricePerUnit*dt.prodQuant}</td>
+          <td>{dt.price}</td>
           <td><button>Update</button></td>
           <td><button>Delete</button></td>
         </tr>

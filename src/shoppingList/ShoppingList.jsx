@@ -1,9 +1,9 @@
 import React from "react";
 import prodImg from "../img/hero-small.jpg"
 import Popups from "../popups/Popups";
-const RightSide = () => {
+const ShopppingList = () => {
   let totalPrice=0
-    let products=[
+    let shoppingList=[
       {
       prodImg,
       prodName:"mounice",
@@ -32,7 +32,7 @@ const RightSide = () => {
           <th></th>
         </tr>
         {
-          products.map(dt=>{
+          shoppingList.map(dt=>{
             totalPrice+=dt.prodPricePerUnit*dt.prodQuant
             
             return <tr>
@@ -57,4 +57,4 @@ const RightSide = () => {
   );
 };
 
-export default RightSide;
+export default ShopppingList;
