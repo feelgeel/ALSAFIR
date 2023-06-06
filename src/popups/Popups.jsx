@@ -1,11 +1,12 @@
 import React from 'react'
 import img1 from "../img/nat-8.jpg"
 import img2 from "../img/nat-7.jpg"
-export default function Popups() {
+export default function Popups({children}) {
   return (
     <div className="popups" id="popup">
         <div className="popups-content">
-            <div className="popups-left">
+          {children}
+            {/* <div className="popups-left">
                 <img className="popups-img-1" src={img1} alt=""/>
                 <img  className="popups-img-2" src={img2} alt=""/>
             </div>
@@ -22,8 +23,9 @@ export default function Popups() {
                         Gravida neque convallis a cras semper. Molestie at elementum eu facilisis sed odio morbi quis. Faucibus                       
                     </p>
                     <a href="#" className="btn btn-green">Book now</a>
-                </div>
+                </div> */}
         </div>
+    
     </div>
   )
 }

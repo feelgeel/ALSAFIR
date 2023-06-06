@@ -24,10 +24,10 @@ function App() {
       path: "/",
       element: <ShoppingList />,
     },
-    // {
-    //   path: "/manageDb",
-    //   element: <ManageDb/>,
-    // },
+    {
+      path: "/manageDb",
+      element: <ManageDb/>,
+    },
     {
       path: "/manageDb/add",
       element: <AddToDb/>,
@@ -50,7 +50,7 @@ function App() {
       <div className="global">
         <div className="nav">
           <button  className="sales"><a href="/">sales</a></button>
-          <button className="db_manager"><a href="/manageDb/add">db manager</a></button>
+          <button className="db_manager"><a href="/manageDb">db manager</a></button>
         </div>
         <div
           style={{ display: "flex", width: "100vw", height: "100vh" }}

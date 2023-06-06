@@ -6,6 +6,10 @@ export default function AddToDb() {
       <button disabled>add</button>
       <button><a href="/manageDb/update">update</a></button>
       <button><a href="/manageDb/delete">delete</a></button>
+      <div>
+      <input type="text " placeHolder="search"/>
+
+      </div>
     </div>
   )
 }
