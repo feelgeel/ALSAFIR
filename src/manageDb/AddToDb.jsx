@@ -1,15 +1,35 @@
 import React from 'react'
-
+import * as Yup from "yup"
+import C_FormField from '../component/form/C_FormField';
+import C_Form from '../component/form/C_Form';
+import C_SubmitButton from '../component/form/C_SubmitButton';
+const schema = Yup.object().shape({
+  email: Yup.string().email().required(),
+  password: Yup.string().required(),
+})
 export default function AddToDb() {
   return (
     <div>
-      <button disabled>add</button>
-      <button><a href="/manageDb/update">update</a></button>
-      <button><a href="/manageDb/delete">delete</a></button>
-      <div>
-      <input type="text " placeHolder="search"/>
-
-      </div>
+      <C_Form
+validationSchema={schema}
+onSubmit={(values)=>{
+   console.log(values)
+   }}
+initialValues={{
+  email: '',
+  password: '',
+}}
+>
+<C_FormField
+name="email"
+type="text"
+/>
+<C_FormField
+name="password"
+type="password"
+/>
+<C_SubmitButton/>
+</C_Form>
     </div>
   )
 }

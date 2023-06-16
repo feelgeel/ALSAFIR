@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import prodImg from "../img/hero-small.jpg"
 import Popups from "../popups/Popups";
+import AddSales from "../manageSales/AddSales";
+import DeleteSales from "../manageSales/DeleteSales";
+import UpdateSales from "../manageSales/UpdateSales";
+import ProductList from "../productsList/ProductList";
 const ShopppingList = () => {
+  let [selectedProd, setselectedProd] = useState({});
+  let [chosenCompo, setchosenCompo] = useState(<AddSales />);
   let totalPrice=0
     let shoppingList=[
       {
@@ -17,6 +23,15 @@ const ShopppingList = () => {
         prodPricePerUnit:30,
     },
   ]
+  const handleUpdate = (dt) => {
+    console.log(dt);
+    setchosenCompo(<UpdateSales updatedSales={dt} />);
+    setselectedProd(dt);
+  };
+  const hendleDelete = (dt) => {
+    setchosenCompo(<DeleteSales deletedSales={dt} />);
+    setselectedProd(dt);
+  };
   return (
     <div className="shoppingList">
       <table style={{width:"100%"}}>
@@ -41,8 +56,15 @@ const ShopppingList = () => {
           <td>{dt.prodQuant}</td>
           <td>{dt.prodPricePerUnit}</td>
           <td>{dt.prodPricePerUnit*dt.prodQuant}</td>
-          <td><button>Update</button></td>
-          <td><button>Delete</button></td>
+          <td>
+          <button onClick={() => handleUpdate(dt)}>
+                      <a href="#popup">update</a>
+                    </button>
+            </td>
+          <td>
+          <button onClick={() => hendleDelete(dt)}>
+                       <a href="#popup">delete</a></button>
+            </td>
         </tr>
           }
           )
@@ -52,7 +74,8 @@ const ShopppingList = () => {
         <span>TOTAL PRICE {totalPrice} DA</span>
         <button>sold</button>
       </div>
-      <Popups/>
+      <Popups>{chosenCompo}</Popups>
+      {/* <Popups><ProductList/></Popups> */}
     </div>
   );
 };
