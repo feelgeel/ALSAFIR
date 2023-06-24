@@ -33,7 +33,7 @@ const ProductList = () => {
             price:30,
         },
     ]
-    dispatch(productsActions.addProducts(prodDb));
+    dispatch(productsActions.modifyProducts(prodDb));
      const re_products=useSelector(state=>state.entities.products.list);
     //  const [products,setproducts]=useState(re_products)
   console.log("prod",re_products);

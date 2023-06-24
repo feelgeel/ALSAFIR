@@ -1,4 +1,5 @@
 import {createSlice } from "@reduxjs/toolkit";
+import prodImg from "../../img/hero.jpg";
 
 
 
@@ -6,10 +7,23 @@ import {createSlice } from "@reduxjs/toolkit";
  const slice=createSlice({
      name:"products",
      initialState:{
-        list: [],
+        list: [ 
+            {
+            prodImg,
+            prodName:"mounice",
+            prodQuant:1,
+            prodPricePerUnit:30,
+          },
+            {
+              prodImg,
+              prodName:"zitoun",
+              prodQuant:1,
+              prodPricePerUnit:30,
+          },
+        ],
         },
      reducers:{
-        addProducts:(listName,action)=>{
+        modifyProducts:(listName,action)=>{
             listName.list=action.payload
        },
         
@@ -17,4 +31,4 @@ import {createSlice } from "@reduxjs/toolkit";
  })
 
 export default  slice.reducer;
-export const {addProducts}=slice.actions;
+export const {modifyProducts}=slice.actions;

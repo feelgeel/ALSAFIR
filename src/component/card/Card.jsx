@@ -1,5 +1,7 @@
 import React from 'react'
 // import "./card.css"
+import prodImg from "../../img/hero.jpg"
+
 
 export default function Card({data}) {
     // console.log(data);
@@ -7,7 +9,7 @@ export default function Card({data}) {
         <div className='card'>
             <div className="card-side card-side-front">
                 <div className="card-pic card-pic-1">
-                    &nbsp;
+                   <img width="100%" height="100%" src={prodImg} alt="" />
                 </div>
                 <h4 className="card-heading">
                     <span className="card-heading-span card-heading-span-1">{data.name}</span>
