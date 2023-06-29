@@ -8,7 +8,10 @@
 .productList{
     width: 50%;
     display: flex;
+    flex-wrap: wrap;
 }
 .chosenList{
     width: 50%;
+    display: flex;
+    flex-wrap: wrap;
 }
